@@ -1,0 +1,22 @@
+{
+  "name": "simpleants",
+  "version": "0.0.1",
+  "description": "A very simple ants simulation",
+  "main": "index.ts",
+  "author": "Red Ochsenbein <red@redochsenbein.ch>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch --mode=development",
+    "start": "webpack-dev-server --open"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

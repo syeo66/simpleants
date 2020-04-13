@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "outDir": "dist",
+    "sourceMap": true,
+    "lib": ["esnext", "DOM"],
+    "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./"
+  },
+
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", ".vscode"]
+}
