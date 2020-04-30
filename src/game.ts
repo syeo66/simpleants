@@ -6,7 +6,9 @@ interface GameObject {
   x: number
   y: number
 }
-interface Ant extends GameObject {}
+interface Ant extends GameObject {
+  lastStep: { x: number; y: number }
+}
 interface Scent extends GameObject {
   strength: number
 }
@@ -27,6 +29,9 @@ export const gameLoop = () => {
       }
       for (let y = -1; y <= 1; y++) {
         const cy = ant.y + y
+        if (cx === ant.lastStep.x || cy === ant.lastStep.y) {
+          continue
+        }
         if (cy < 1 || cy > boardSize.width) {
           continue
         }
@@ -41,6 +46,8 @@ export const gameLoop = () => {
     }
 
     const decision = decideWay({ nextSteps })
+    ant.lastStep.x = ant.x
+    ant.lastStep.y = ant.y
     ant.x = decision.x
     ant.y = decision.y
   }
@@ -73,7 +80,7 @@ const initScent = () => {
 }
 
 const initAnts = () => {
-  ants.push({ x: 1, y: 1, color: 'black' })
+  ants.push({ x: 1, y: 1, color: 'black', lastStep: { x: 0, y: 0 } })
 }
 
 const decideWay = ({ nextSteps }: { nextSteps: Scent[] }) => {
