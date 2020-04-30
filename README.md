@@ -1,0 +1,2 @@
+# simpleants
+Simulating simple ants
